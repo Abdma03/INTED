@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper,oldfontcommands]{memoir}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage[dvips]{graphicx}
+%\usepackage{xcolor}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{multirow}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+
+\usepackage[dvipsnames]{xcolor}
+%\usepackage{tikz}
+%\usetikzlibrary{ shapes.geometric }
+%\usetikzlibrary{calc}
+%\usepackage{anyfontsize}
+\usepackage{mathtools,amsfonts,amssymb,amsthm}
+\usepackage{graphicx}
+
+\usepackage{pdfpages}
+
+\usepackage{wrapfig}
+
+\usepackage[
+breaklinks=true,colorlinks=true,
+%linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
+linkcolor=black,urlcolor=black,citecolor=black,% PRINT
+bookmarks=true,bookmarksopenlevel=2]{hyperref}
+
+\usepackage{geometry}
+% PDF VIEW
+% \geometry{total={210mm,297mm},
+% left=25mm,right=25mm,%
+% bindingoffset=0mm, top=25mm,bottom=25mm}
+% PRINT
+\geometry{
+left=20mm,right=20mm, top = 25mm, bottom = 25mm}%,
+%bindingoffset=10mm, top=25mm,bottom=25mm}
+
+\OnehalfSpacing
+%\linespread{1.3}
+
+%%% CHAPTER'S STYLE
+\chapterstyle{bianchi}
+%\chapterstyle{ger}
+%\chapterstyle{madsen}
+%\chapterstyle{ell}
+%%% STYLE OF SECTIONS, SUBSECTIONS, AND SUBSUBSECTIONS
+\renewcommand*{\chapnamefont}{\normalfont\large\rmfamily\itshape}
+%\renewcommand*{\chapnumfont}{\normalfont\large}
+%\renewcommand*{\chaptitlefont}{\normalfont\huge\rmfamily}
+
+%%% STYLE OF PAGES NUMBERING
+%\pagestyle{companion}\nouppercaseheads 
+%\pagestyle{headings}
+%\pagestyle{Ruled}
+\pagestyle{plain}
+\makepagestyle{plain}
+\makeevenfoot{plain}{}{}{\thepage}
+\makeoddfoot{plain}{}{}{\thepage}
+\makeevenhead{plain}{}{}{}
+\makeoddhead{plain}{}{}{}
+
+\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+
+\newtheorem*{theorem}{Teorem}
+\newtheorem*{lemma}{Lemma}
+
+\renewcommand{\qedsymbol}{$\square$}
+\renewcommand*{\proofname}{Bevis}
+
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\ra}{\rightarrow}
+
+
+\begin{document}
+
+%%%%forside
+\begin{center}
+    \vspace{2cm}
+    \Huge{\textbf{Can we demonstrate the centroid method is better than using an LLM directly to do similar coding tasks? }}\\
+    \vspace{0.6cm}
+    \LARGE{Navn}\\
+    \vspace{0.25cm}
+    \LARGE{\textit{Subtitle}}\\
+\end{center}
+
+\section*{Introduction}
+
+\section*{Method}
+\subsection*{First "project"}
+\begin{flushleft}
+We started by creating our own dataset centered around the question "Why did you choose the Honours program".
+We then created 25 fictitious responses to this question, which made up our dataset. We then collectively decided on categories 
+(should we write out the categories?) and sorted each response onto one of these categories to form our "ground truth" that we later 
+compared our other results to. \\
+Based on this dataset, we prompted ChatGPT UiO in different ways. \\
+- We started by asking it to simply sort the responses into categories - (made up a category for each - this should be in results)\\
+- we then proceeded to repeat the same process, but gave it additional instructions.\\[10pt]
+
+Then we gave it the following prompt: (prompt) and repeated this process three times. The data was collected, sorted into a list and each category was assigned
+a number for ease of computation. We then proceeded to calculate the Cohen Kappa Score using the ($cohen_kappa_score$)-function from (scikitlearn.metrics) using the following code:\\
+(code)
+
+We then used the centroid method on this dataset using the code provided from the Colab. 
+
+\subsection*{Second "project"}
+For this project we used a pre-categorized dataset from Hugging Face (link), containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
+The dataset had already been split into a training- and test-dataset, and we used the test-dataset which consisted of 828 headlines and used the first 500. \\
+We then proceeded to manually prompt ChatGPT UiO by asking it to categorize the first 500 headlines by giving it chunks of 50 at a time and starting a new chat per chunk. This prompting 
+was done using the following prompt:\\
+(prompt)\\
+The prompt had to be somewhat modified in the process, since the format of the output from GPT varied, despite the specifications in the prompt. (Explain further)\\[10pt]
+The dataset of the 500 first datapoints were coded by ChatGPT UiO three separate times and each run was collected into a single document. This text was processed using the following code:\\
+(code)\\
+The produced lists were then used as a basis for calculating the Inter Rater Reliability using Cohen's Kappa test using the same procedure as we did in (first project).
+
+We also used the centroid method to obtain a categorization. The centroid method gives a distribution 
+
+
+\section*{Results}
+
+\section*{Discussion}
+
+\section*{Conclusion}
+    
+\end{flushleft}
+
+\end{document}
