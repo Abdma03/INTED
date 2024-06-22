@@ -1,0 +1,33 @@
+# Invoke-LLM.ps1
+
+# Define the file paths
+$promptFilePath = "C:\Users\maria\Desktop\GPT_model_textembedding\PWS_playing\jellyfish.txt"
+$responseFilePath = "C:\Users\maria\Desktop\GPT_model_textembedding\PWS_playing\output_jellyfish.txt"
+
+# Start the LLM process
+$StartInfo = New-Object System.Diagnostics.ProcessStartInfo
+$StartInfo.FileName = "ollama"
+$StartInfo.RedirectStandardInput = $true
+$StartInfo.RedirectStandardOutput = $true
+$StartInfo.UseShellExecute = $false
+$StartInfo.Arguments = "run llama"
+$Process = New-Object System.Diagnostics.Process
+$Process.StartInfo = $StartInfo
+$Process.Start() | Out-Null
+
+# Send the prompt from the file to the LLM
+$prompt = Get-Content $promptFilePath
+$Process.StandardInput.WriteLine($prompt)
+$Process.StandardInput.Close() # Close input stream if the LLM expects end-of-file to start processing
+
+# Read the response from the LLM
+$response = $Process.StandardOutput.ReadToEnd()
+
+# Write the response to the response file
+$response | Out-File $responseFilePath
+
+# Dispose of the process object
+$Process.Close()
+
+# Optionally, display the response in the console
+Write-Host $response
