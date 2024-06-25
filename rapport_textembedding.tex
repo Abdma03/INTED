@@ -1,133 +1,90 @@
-\documentclass[11pt,a4paper,oldfontcommands]{memoir}
+%%% Prepared by Wai Qian Tham, on 4 June 2024. 
+%% Prepared with comments and instructions for report writing. However, the writing guide is specifically for scientific writing, following IEEE guidelines. Do consult library services or any departmental writing guidelines for report writing. 
+%% This main page contains the preamble, and the only content here is the title and the abstract. Other content writing can be done in the .tex files in the other folders. 
+
+\documentclass[a4paper]{article} 
+% \documentclass[a4paper, twocolumn, 11.5pt]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{microtype}
-\usepackage[dvips]{graphicx}
-%\usepackage{xcolor}
 \usepackage{times}
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+
+%% Useful packages
 \usepackage{amsmath}
-\usepackage{multirow}
-%\usepackage{amsfonts}
-%\usepackage{amssymb}
-
-\usepackage[dvipsnames]{xcolor}
-%\usepackage{tikz}
-%\usetikzlibrary{ shapes.geometric }
-%\usetikzlibrary{calc}
-%\usepackage{anyfontsize}
-\usepackage{mathtools,amsfonts,amssymb,amsthm}
 \usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[dvipsnames, table]{xcolor}
+\definecolor{tcdBlue}{RGB}{5, 105, 185}
+\usepackage[colorlinks=true,allcolors=.,urlcolor=blue]{hyperref} % allowing hyperlinking of references. You can set the colour of the links or turn the colorlinks to false if no colour preferable. 
+\usepackage[numbers]{natbib} % for Vancouver numbering style citation. Remove the [numbers] command for author-year Harvard style referencing. 
 
-\usepackage{pdfpages}
 
-\usepackage{wrapfig}
+%% optional changes to the style. Comment (Ctrl+/) to remove these options. 
+% change font to sans-serif fonts. 
+%\renewcommand{\familydefault}{\sfdefault}
+% Format chapter headings appropriately to include tcd blue. 
+\usepackage{titlesec}
+\titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thesection}{1em}{}{}      %\color{tcdBlue}
 
-\usepackage[
-breaklinks=true,colorlinks=true,
-%linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
-linkcolor=black,urlcolor=black,citecolor=black,% PRINT
-bookmarks=true,bookmarksopenlevel=2]{hyperref}
+%% For nomenclature. Comment away if not used. 
+\usepackage{nomencl} % for nomenclature
+\usepackage{etoolbox} % to group nomenclature
+\usepackage{multicol} % for multiple columns in a page/table
 
-\usepackage{geometry}
-% PDF VIEW
-% \geometry{total={210mm,297mm},
-% left=25mm,right=25mm,%
-% bindingoffset=0mm, top=25mm,bottom=25mm}
-% PRINT
-\geometry{
-left=20mm,right=20mm, top = 25mm, bottom = 25mm}%,
-%bindingoffset=10mm, top=25mm,bottom=25mm}
+%%%%% table formatting %%%%%
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{capt-of}
+% dashed lines
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+% widows & orphans & penalties
+\widowpenalty500
+\clubpenalty500
+\clubpenalty=9996
+\exhyphenpenalty=50 %for line-breaking at an explicit hyphen
+\brokenpenalty=4991
+\predisplaypenalty=10000
+\postdisplaypenalty=1549
+\displaywidowpenalty=1602
+\floatingpenalty = 20000
 
-\OnehalfSpacing
-%\linespread{1.3}
-
-%%% CHAPTER'S STYLE
-\chapterstyle{bianchi}
-%\chapterstyle{ger}
-%\chapterstyle{madsen}
-%\chapterstyle{ell}
-%%% STYLE OF SECTIONS, SUBSECTIONS, AND SUBSUBSECTIONS
-\renewcommand*{\chapnamefont}{\normalfont\large\rmfamily\itshape}
-%\renewcommand*{\chapnumfont}{\normalfont\large}
-%\renewcommand*{\chaptitlefont}{\normalfont\huge\rmfamily}
-
-%%% STYLE OF PAGES NUMBERING
-%\pagestyle{companion}\nouppercaseheads 
-%\pagestyle{headings}
-%\pagestyle{Ruled}
-\pagestyle{plain}
-\makepagestyle{plain}
-\makeevenfoot{plain}{}{}{\thepage}
-\makeoddfoot{plain}{}{}{\thepage}
-\makeevenhead{plain}{}{}{}
-\makeoddhead{plain}{}{}{}
-
-\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
-
-\newtheorem*{theorem}{Teorem}
-\newtheorem*{lemma}{Lemma}
-
-\renewcommand{\qedsymbol}{$\square$}
-\renewcommand*{\proofname}{Bevis}
-
-\newcommand{\R}{{\mathbb R}}
-\newcommand{\N}{{\mathbb N}}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\Q}{\mathbb Q}
-\newcommand{\ra}{\rightarrow}
-
+\hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
+\title{Can we demonstrate the centroid method is better than using an LLM directly to do similar coding tasks?)}
+\author{Name Surname 1, Name Surname 2}
+\maketitle
 
-%%%%forside
-\begin{center}
-    \vspace{2cm}
-    \Huge{\textbf{Can we demonstrate the centroid method is better than using an LLM directly to do similar coding tasks? }}\\
-    \vspace{0.6cm}
-    \LARGE{Navn}\\
-    \vspace{0.25cm}
-    \LARGE{\textit{Subtitle}}\\
-\end{center}
+\begin{abstract}
+    Input abstract here. The abstract should be short, and contain a summary of what is to be expected in the report. Some key findings is recommended to be highlighted in the abstract.
+\end{abstract}
 
-\section*{Introduction}
+% \tableofcontents % Optional. Remove if unnecessary (or ugly). 
+% \input{Addendum/nomenclature} % Optional. Remove if unnecessary. 
 
-\section*{Method}
-\subsection*{First "project"}
-\begin{flushleft}
-We started by creating our own dataset centered around the question "Why did you choose the Honours program".
-We then created 25 fictitious responses to this question, which made up our dataset. We then collectively decided on categories 
-(should we write out the categories?) and sorted each response onto one of these categories to form our "ground truth" that we later 
-compared our other results to. \\
-Based on this dataset, we prompted ChatGPT UiO in different ways. \\
-- We started by asking it to simply sort the responses into categories - (made up a category for each - this should be in results)\\
-- we then proceeded to repeat the same process, but gave it additional instructions.\\[10pt]
+\input{Rapport/introduksjon} % introduction to the report. 
+\input{Rapport/bakgrunn} % background of article or theory
+\input{Rapport/metode} % methodology
+\input{Rapport/resultater} % elaborating on the results
+\input{Rapport/diskusjon} % analyse the data. Can be combined with the results section to form one combined section. 
+\input{Rapport/konklusjon}
 
-Then we gave it the following prompt: (prompt) and repeated this process three times. The data was collected, sorted into a list and each category was assigned
-a number for ease of computation. We then proceeded to calculate the Cohen Kappa Score using the ($cohen_kappa_score$)-function from (scikitlearn.metrics) using the following code:\\
-(code)
+%% References
+\bibliographystyle{unsrtnat} % Vancouver reference style (numbering). 
+% \bibliographystyle{agsm} % Harvard reference style (author-year). 
+\bibliography{Rapport/bibliography}
+\addcontentsline{toc}{section}{Bibliography}
 
-We then used the centroid method on this dataset using the code provided from the Colab. 
-
-\subsection*{Second "project"}
-For this project we used a pre-categorized dataset from Hugging Face (link), containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
-The dataset had already been split into a training- and test-dataset, and we used the test-dataset which consisted of 828 headlines and used the first 500. \\
-We then proceeded to manually prompt ChatGPT UiO by asking it to categorize the first 500 headlines by giving it chunks of 50 at a time and starting a new chat per chunk. This prompting 
-was done using the following prompt:\\
-(prompt)\\
-The prompt had to be somewhat modified in the process, since the format of the output from GPT varied, despite the specifications in the prompt. (Explain further)\\[10pt]
-The dataset of the 500 first datapoints were coded by ChatGPT UiO three separate times and each run was collected into a single document. This text was processed using the following code:\\
-(code)\\
-The produced lists were then used as a basis for calculating the Inter Rater Reliability using Cohen's Kappa test using the same procedure as we did in (first project).
-
-We also used the centroid method to obtain a categorization. The centroid method gives a distribution 
-
-
-\section*{Results}
-
-\section*{Discussion}
-
-\section*{Conclusion}
-    
-\end{flushleft}
+%% Appendices
+\input{Rapport/appendiks.tex}
 
 \end{document}
