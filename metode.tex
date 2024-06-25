@@ -1,0 +1,53 @@
+\section{Methodology}
+Elaborate in detail the methods you used to collect the data. This should also include any potential uncertainty and errors. 
+Any relevant equations should be explained either here or in the background section. 
+
+Typically, scientific writing should be in the passive voice. The use of active voice has been more and more accepted in scientific writing, however, it is generally better to be in a passive voice. 
+A passive voice removes the author from the work, which makes the work done feel more generalised, and should be replicable by anybody. 
+Since scientific work should be factual by nature, the results should be the same regardless of the individual doing the experiment. 
+Although this is not always true, especially considering bias, it is generally recommended to leave the subject out of the report. 
+
+\subsection*{First "project"}
+\begin{flushleft}
+We started by creating our own dataset centered around the question "Why did you choose the Honours program".
+We then created 25 fictitious responses to this question, which made up our dataset. We then collectively decided on categories 
+(should we write out the categories?) and sorted each response onto one of these categories to form our "ground truth" that we later 
+compared our other results to. \\
+Based on this dataset, we prompted ChatGPT UiO in different ways. \\
+- We started by asking it to simply sort the responses into categories - (made up a category for each - this should be in results)\\
+- we then proceeded to repeat the same process, but gave it additional instructions.\\[10pt]
+
+Then we gave it the following prompt: (prompt) and repeated this process three times. The data was collected, sorted into a list and each category was assigned
+a number for ease of computation. We then proceeded to calculate the Cohen Kappa Score using the ($cohen_kappa_score$)-function from (scikitlearn.metrics) using the following code:\\
+(code)
+
+We then used the centroid method on this dataset using the code provided from the Colab. - have to specify the parameters used
+
+\subsection*{Second "project"}
+For this project we used a pre-categorized dataset from Hugging Face (link), containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
+The dataset had already been split into a training- and test-dataset, and we used the test-dataset which consisted of 828 headlines and used the first 500. \\
+We then proceeded to manually prompt ChatGPT UiO by asking it to categorize the first 500 headlines by giving it chunks of 50 at a time and starting a new chat per chunk. This prompting 
+was done using the following prompt:\\
+(prompt)\\
+The prompt had to be somewhat modified in the process, since the format of the output from GPT varied, despite the specifications in the prompt. (Explain further)\\[10pt]
+The dataset of the 500 first datapoints were coded by ChatGPT UiO three separate times and each run was collected into a single document. This text was processed using the following code:\\
+(code)\\
+The produced lists were then used as a basis for calculating the Inter Rater Reliability using Cohen's Kappa test using the same procedure as we did in (first project).
+
+We also used the centroid method to obtain a categorization. The centroid method gives its result as a distribution between the different categories. We wrote a script to obtain only the most probable category two different ways.
+First we set $\alpha = 150$ to ~shift the weight to get a value greater than 0.50 for all of them~ and compared this categorization to the ground truth using Cohen's Kappa Score using the following code:\\
+(code)\\
+We then set $\alpha = 15$ and excluded the data where the greatest value in the distribution was smaller than 0.50, and constructed a ground truth where we excluded the same values, 
+and used Cohen's Kappa Score to compare the two using the following code:\\
+(code)\\
+
+Llama\\
+Categorization was done using Llama3 but using prompting in the terminal using a Powershell script, and using 3"cloud server".\\
+The prompting in the Powershell was done using the following code:\\
+(code)
+The prompting with the 3"cloud server" was done using the following code:\\
+(code)
+
+\end{flushleft}
+
+\subsection*{Third "project"}

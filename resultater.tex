@@ -1,0 +1,73 @@
+\section*{Results}
+\subsection*{First "project"}
+Small Dataset:
+\begin{table}[h]
+    \centering
+    %\begin{small}
+        \begin{tabular}{@{}lllllllllllll@{}}\toprule        % l refers to left-aligned text, change to r for right-aligned
+            \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
+            \midrule
+            \textbf{Ground truth} & 1  & 0.7635933806146572 & 0.8842592592592593 & 0.8842592592592593\\
+            \hdashline
+            \textbf{Run 1} & 0.7635933806146572 & 1 & 0.7530864197530864 & 0.7530864197530864\\
+            \hdashline
+            \textbf{Run 2} & 0.8842592592592593 & 0.7530864197530864 & 1 & 0.8798076923076923\\
+            \hdashline
+            \textbf{Run 3} & 0.8842592592592593 & 0.7530864197530864 & 0.8798076923076923 & 1\\
+            \bottomrule
+        \end{tabular}
+    %\end{small}
+    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+\end{table}
+
+\subsection*{Second "project"}
+
+ChatGPT UiO:
+\begin{table}[h]            % [h] gives placement
+    \centering
+    \begin{tabular}{@{}lllllllllll@{}}\toprule
+        \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
+        \midrule
+        \textbf{Ground truth} & \cellcolor[HTML]{FFFFFF} 1  & 0.8968636487125565 & 0.7811913027230619 & 0.8942869655828564\\
+        \hdashline
+        \textbf{Run 1} & 0.8968636487125565 & 1 & 0.8183344707886739 & 0.9497358619545713\\
+        \hdashline
+        \textbf{Run 2} & 0.7811913027230619 & 0.8183344707886739 & 1 & 0.8231740262291861\\
+        \hdashline
+        \textbf{Run 3} & 0.8942869655828564 & 0.9497358619545713 & 0.8231740262291861 & 1\\
+        \bottomrule
+    \end{tabular}
+    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+\end{table}
+
+Llama3:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}llllllllllll@{}}\toprule
+        \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
+        \midrule
+        \textbf{Ground truth} & 1  & 0.8748354085622594 & 0.869899822863605 & 0.8650661176023748\\
+        \hdashline
+        \textbf{Run 1} & 0.8748354085622594 & 1 & 0.8183344707886739 & 0.9525706697021438\\
+        \hdashline
+        \textbf{Run 2} & 0.869899822863605 & 0.9550195664885774 & 1 & 0.9650587013816788\\
+        \hdashline
+        \textbf{Run 3} & 0.8650661176023748 & 0.95257066970214383 & 0.9650587013816788 & 1\\
+        \bottomrule
+    \end{tabular}
+    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+\end{table}
+
+Centroid Method:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}lllllllllll@{}}\toprule
+        \textbf{Run} & \textbf{Ground truth}\\
+        \midrule
+        \textbf{Centroid Method} & 0.775840597758406\\
+        \hdashline
+        \textbf{Excluded Centroid Method} & 0.8212882389320273\\
+        \bottomrule
+    \end{tabular}
+    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+\end{table}

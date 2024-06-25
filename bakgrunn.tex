@@ -1,0 +1,69 @@
+\section{Background}
+This section should highlight the basis of the report, containing specific concepts used for the contents of the report. An alternative section title would be ``\textbf{Theory}''. This should include any background understanding required for the content of the report, any literature review done and so on. Sometimes, this can be combined with the introduction, however, generally, it will look neater to have a section dedicated to the theory or background of the research or experimental analysis done. 
+
+This is different from the methodology which outlines the steps done to do the experimental work. Consider this to be an outline of the theoretical work done for the experimental (or simulation) work which will be outlined in the methodology section. 
+
+\subsection{Writing tips}
+Generally, a scientific report should have justified text, as it looks neater, the right side of the report is not looking jagged. The font size should be 11pt to 13pt, but generally should be kept at 12pt. The recommended font type is either Arial or Calibri. Times New Roman is still accepted and generally the preferred font type, although recent talks about how it is less reader-friendly make it less appealing. 
+
+Given that Ireland uses UK English, please make sure any spellings should follow UK English spelling. If any information can be presented through paragraphing, it is recommended to do so. It is not recommended to use bullet or numbered points. It should be used sparingly, even though it might be easier to read. 
+
+Please also bear in mind that the main text should be within the margins. Any figures, equations and tables should still be within the margins. The following subsections will consider the specific points that should be taken note of.
+
+\subsection{Typography}
+Be mindful that the capitalisation of the first letter is only for given names. For example, although LED is a generally understood term, and the abbreviations are in capital letters, it should be written as light-emitting diode instead of capitalising the first letters. Any abbreviation should use uppercase letters (e.g. greenhouse gas (GHG)). If a few letters are used to represent an abbreviated word, lowercase letters can be used, such as Abbrev. for abbreviation or Pop. for population. 
+
+Typos could be mitigated with proofreading (especially on \LaTeX where the code editor and the PDF presented might have different outcomes). The use of Grammarly will help in checking grammatical and spelling errors if needed, especially for \LaTeX. 
+
+\subsubsection{Scientific Writing Conventions} \label{f:typography}
+The \textbf{bold} style is not recommended to be used for emphasis. Excessive (or any) use of \textbf{bold} in text is frowned upon. Emphasis is usually done using \emph{italics}. But again, please use it sparingly. 
+
+Italics in mathematical equations are also very particular. By convention, \textit{italics} should only be used for mathematical terms (e.g. \textit{l} for length, \textit{m} for mass), while units should be in normal style (e.g. m for metre, and kg for kilogram). On \LaTeX, the default style in mathematical equations are \textit{italics}, so if any units were to be introduced in the equation, please remember to remove the \textit{italics}. 
+
+On that note as well, superscripts and subscripts should not be overlooked. Writing m2 is different from m$^2$, as well as $Voc$ from $V_{OC}$. When writing symbols, it is generally recommended to keep one symbol to represent one quantity, while using subscripts to specify the specific quantity it represents. For example, for the population of Dublin, $PopulationOfDublin$, $Population_{Dublin}$ or $Pop_{Dublin}$ are not recommended. Instead, it is recommended to use $P_{Dublin}$ or even $N_{D}$. Given that unknowns or quantities can be represented by a single symbol or letter, $Pop$ could be an abbreviation for `population' or three unknowns under implicit multiplications. This will be further discussed in subsection \ref{f:eqn}.
+
+\subsection{Equations and Numbers} \label{f:eqn}
+Whenever an equation is introduced into the report, it must be useful to understand the mathematical work done in the report. Any mathematical equations used during the process of the research are recommended to be included in the report (although simple equations that are generally well-understood can be omitted). 
+
+A good practice is not to write the full name of the quantity in the equation but to introduce a term to represent it in the equation. This can be seen for example using Einstein's mass-energy equation in (\ref{Emc2_writ}) and (\ref{Emc2_symb}):
+\begin{equation}\label{Emc2_writ}
+    Energy = mass \times \left(Speed of Light\right)^2,
+\end{equation}
+\begin{equation}\label{Emc2_symb}
+    E = mc^2,
+\end{equation}
+where $E$ is energy, $m$ is mass and $c$ represents the speed of light. 
+
+Once terms are introduced as seen in (\ref{Emc2_symb}), the equation is easier to read. Note also that any terms that have been introduced are fully described, and in a paragraph instead of bullet points. The equations are also treated as part of the sentence instead of a separate entity like figures or tables. That is why a punctuation mark was used at the end of each equation. 
+
+The equations should also be labelled so that it is easily referred to when it is used. Thus, instead of inputting values in the equations, it is recommended to leave them out and conclude the calculations in text. For example, the gradient of a linear function, $m$ can be written as
+\begin{equation} \label{linear}
+    m=\frac{y-c}{x},
+\end{equation}
+where $x$ and $y$ are independent variables with a linear correlation and $c$ is the y-axis intercept. For a directly proportional relationship (i.e. $c=0$), and a coordinate of ($2.0,7.0$) was found, by using (\ref{linear}), $m$ is calculated to be 3.5. 
+
+Although it is fine to include the units in the equation, it is generally better to put it in the description of the terms. For example, energy, $E$ in Wh can be calculated as
+\begin{equation}
+    E = P\times t,
+\end{equation}
+where $P$ is the power in watts (W) and \(t\) is the time taken in hours (h). Bonkers.ie stated that the average household energy usage in a year is 4200kWh a year, while 50\% of the households use between 3150\textendash5250kWh a year \cite{Energy_IRELAND}. Note that even if a range is written, the units should only be at the end, and the dash should be an en dash. 
+
+Generally, it is recommended to use indices when writing values. It is easier to understand $3.1\times10^{-3}$ compared to $0.0031$. Likewise, since the purpose is for ease of reading and interpreting, if any indices are used, the indices should be consistent throughout the variable for easy comparison.  
+
+\subsection{Citations and Reference}
+When citing a document, the reference should contain as much information as possible. The reference should be consistent as well, with the order of information and style of writing. Some report has an inconsistent style of writing the authors. If initials are used for first names, all the authors should only have initials for first names. Most article database (or even journal websites) will have the option to download the citation as BibTeX, which then can be copied into the bibliography .bib file. The reference should be at the end of the document, before the appendix. 
+
+When citing in the main text, the common two ways of doing it is by numbers (generally Vancouver style \cite{Imper_VancouverGuide}) or by author-year (generally Harvard style \cite{Imper_HarvGuide}). When mentioning the name of the author during the citation, \textit{et al.} should be used and in italics. If using numbered styles, the number can appear after the name of the author or at the end of the sentence. 
+
+One source that is frowned upon as a reference is Wikipedia. Given the nature of Wikipedia being open for editing by the public, the generally quick-changing nature of the Wikipedia page makes it not a suitable source of reference. However, Wikipedia is still useful to obtain resources from their citation list. Although Wikipedia should not be referenced, Wikimedia figures can be referenced, although not recommended as well. 
+
+\subsubsection{Plagiarism}
+Changing a few words in a sentence from a resource is insufficient for paraphrasing. Paraphrasing requires a rewrite of the content in your own words, not a slight modification of a given work. Take note as well, although ChatGPT can be a good tool to help paraphrase a sentence, make sure that the content has not changed and produce a conceptually false sentence. \textbf{Please look up your department policies regarding the use of AI writing tools in your report writing. }
+
+At the same time, picking up a full sentence (or a huge part of a sentence) from your sources are also considered plagiarism, even though the sentence is short and not the full content of the report. Although not recommended, quoting should be used if a full quote is picked up to be used in the report. A general guide is that a single quotation mark is for a direct quote from the source, while `double quotation marks are usually used for quoting direct speech' \cite[p.~6]{Imper_VancouverGuide}. Also, take note of the punctuation used as the open quotation mark is a different symbol to the close quotation mark in \LaTeX. 
+
+If paraphrasing can be done, that would be much more recommended than a direct quote. However, if the message cannot be transmitted through paraphrasing, a limited amount of direct quoting can be done. 
+
+Finally, no matter where you have obtained your data, please cite it. Even if the source is the lecture content, please cite the source. As long as it is not from you, you have to cite it. If you looked up more information to analyse your data, \textit{cite where you obtained the information that led you to the conclusion you have made}. In this lab report, the most number of reference per report is one, which highly unlikely that all the information in the report is your own output without any external support or reference. 
+
+One final note, that \textbf{self-plagiarism is still plagiarism}, and you should never submit any work that you have submitted before. If it showed to be useful for the current report, it has to be cited and paraphrased as much as possible. 
