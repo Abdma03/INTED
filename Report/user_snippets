@@ -1,0 +1,54 @@
+{
+	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Inline math": {
+		"prefix": "--im",
+		"body": "\\(${1:...}\\)"
+	},
+	"dollar math": {
+		"scope": "tex,latex",
+		"prefix": "dm", // this is what you type in the editor to get the snippet suggestion
+		"body": ["\\$$1\\$"],
+	},
+	"Non-Inline math": {
+		"scope": "tex,latex",
+		"prefix": "bm",
+		"body": "\\[${1:...}\\]"
+	},
+	"Curly Brackets": {
+		"scope": "tex,latex",
+		"prefix": "cd",
+		"body": "\\{${1:...}\\\\}"
+	},
+	"Brackets-autocompletion": {
+		"scope": "tex,latex",
+		"prefix": "b",
+		"body": "[${1:...}]"
+	},
+	"Bold-face": {
+		"scope": "tex,latex",
+		"prefix": "tb",
+		"body": "\\textbf{${1:...}}"
+	}
+	//{
+	//	"settings": [
+	//	  {
+	//		"prefix": "\\textbf{",
+	//		"postfix": "}",
+	//		"index": 0
+	//	  }
+	//	]
+	//  }
+
+}
