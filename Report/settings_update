@@ -1,0 +1,148 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "python.defaultInterpreterPath": "C:\\Users\\maria\\anaconda3\\python.exe",
+
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.view.pdf.viewer": "browser",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.subfolder.enabled": true,
+    "latex-workshop.latex.outDir": "%DIR%",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "biber",
+            "tools": [
+                "biber"
+            ]
+        },
+        {
+            "name": "pdflatex ➞ biber ➞ 2× pdflatex",
+            "tools": [
+                "pdflatex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "Optimize PDF",
+            "tools": [
+                "gs opt printer"
+            ]
+        },
+        {
+            "name": "LateXcompilation",
+            "tools": [
+                "lualatex+bibtex"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-aux-directory=%OUTDIR%/.aux",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {
+                "TEXINPUTS": "%DIR%/src;%DIR%/../src"
+            }
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "-output-directory=%OUTDIR%/.aux",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "-include-directory=.aux",
+                "%OUTDIR%/.aux/%DOCFILE%"
+            ]
+        },
+        {
+            "name": "gs opt printer",
+            "command": "mgs",
+            "args": [
+                "-sDEVICE=pdfwrite",
+                "-dPDFSETTINGS=/printer",
+                "-o",
+                "%OUTDIR%/%DOCFILE%_optimized.pdf",
+                "%OUTDIR%/%DOCFILE%.pdf"
+            ]
+        },
+        {
+            "name": "gs opt extrem",
+            "command": "mgs",
+            "args": [
+                "-sDEVICE=pdfwrite",
+                "-dPDFSETTINGS=/ebook",
+                "-o",
+                "%OUTDIR%/%DOCFILE%_optimized.pdf",
+                "%OUTDIR%/%DOCFILE%.pdf"
+            ]
+        },
+        {
+            "name": "lualatex+bibtex",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-bibtex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.fdb_latexmk",
+        "*.fls",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.log",
+        "*.lot",
+        "*.nav",
+        "*.out",
+        "*.run.xml",
+        "*.snm",
+        "*.synctex(busy)",
+        "*.synctex.gz",
+        "*.synctex.gz(busy)",
+        "*.toc",
+    ],
+    "vscode-pets.petType": "totoro",
+    "vscode-pets.petSize": "small",
+    "git.autofetch": true
+
+	
+
+}
