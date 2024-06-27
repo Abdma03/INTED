@@ -1,0 +1,442 @@
+GPT: "[ "politics", "politics", "business", "health", "business", "politics", "politics", "politics", "sports", "business", "business", "health", "health", "sports", "sports", "politics", "sports", "business", "tech", "business", "health", "sports", "entertainment", "politics", "business", "sports", "sports", "politics", "sports", "sports", "politics", "sports", "business", "entertainment", "sports", "business", "politics", "health", "entertainment", "business", "business", "business", "sports", "sports", "politics", "sports", "politics", "entertainment", "politics", "politics" ]"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "[ "politics", // 1. Nigeria: Obasanjo Denies Endorsing South-East for Presidency "business", // 2. Credit Suisse Chairman Quits Over Covid Breaches in Latest Setback "entertainment", // 3. Will Smith Apologizes to Chris Rock for Slap, Academy Weighs Action "sports", // 4. Mourinho 'Casts Players Aside Like They Don't Exist', Pogba Says in Damning Verdict on Former Boss "business", // 5. IMF: Nigeria Remains Largest Economy in Africa "sports", // 6. Tokyo 2020: Ten Nigerian Athletes Disqualified After Failing to Meet Testing Requirements "politics", // 7. Nigeria: Northern Group Asks Buhari to Endorse Osinbajo As Successor "sports", // 8. Nigeria Qualify For U17 Afcon After 1-0 Victory Over Burkina Faso "politics", // 9. Atiku's Ideas on Security and Economy Interesting, Says UK High Commissioner to Nigeria "health", // 10. Nigeria to Redistribute Unutilised Covid-19 Vaccine to States "sports", // 11. Vinicius Double Hands Madrid Advantage Over Liverpool in Champions League Quarter-final "business", // 12. Nigeria: Central Bank Chief Emefiele Inaugurates N15bn Rice Mill in Kano "entertainment", // 13. Fireboy, Wizkid Win Big at 2021 Headies Awards "politics", // 14. Nigeria: APC Leaders in Search of Consensus Candidate at Convention "politics", // 15. Nigeria: PDP Asks Supreme Court to Sack Zamfara Governor Matawalle Following Defection to APC "politics", // 16. Nigeria: After Months of Rancour, APC Convenes to Endorse Abdullahi Adamu as Chairman "sports", // 17. Tottenham Sign Former Player Bale from Madrid "politics", // 18. Electoral Act Amendment: Nigeria Senate Cowers, Suspends Move to Override Buhari's Veto "tech", // 19. e-Naira Will Be Protected from Cybersecurity Risks, Central Bank Assures "business", // 20. Nigerian Carrier Ibom Air Signs Agreement with Airbus At Dubai Airshow for Purchase Of 10 A220 Aircraft "politics", // 21. Nigeria's Electoral Body Names Mu'azu Acting Chairman "business", // 22. World Bank Approves $700m for New Climate-Resilient Projects for Nigeria "tech", // 23. Facebook Freezes Venezuela President Maduro's Page Over Covid Misinformation "politics", // 24. Capacity to Mobilise Voters Despite Security Challenges to Decide Anambra Poll "politics", // 25. Nigeria Senate Confirms EFCC Board Nominee Whose Resume Indicated He Started School Before Birth "politics", // 26. Ex-Ogun Governor Osoba Warns against Undermining Southern Governors' Open Grazing Ban "sports", // 27. Sadio Mane's Winning Penalty Sends Senegal to World Cup, Salah's Egypt Miss Out "business", // 28. Nigeria Needs to Boost Food Reserves, Says Central Bank Governor Emefiele "politics", // 29. Nigerian Activist Sowore Shot by Police, Senior Lawyer Falana Says "health", // 30. Monkeypox: Russia Urges WHO to Investigate US-Funded Laboratories in Nigeria "sports", // 31. Russian Racing Driver Kvyat Criticises 'Unfair' Sports Bans "sports", // 32. Defending Champions Algeria Join Senegal in Qualifying for AFCON 2022 "business", // 33. Rising Oil Prices Will Create Problems for Nigeria, NNPC Boss Kyari Says "health", // 34. UK's Centenarian Fundraiser Captain Moore Hospitalised With Covid-19 "sports", // 35. Super Eagles Camp Bubbles Ahead of AFCON 2021 Qualifiers Against Benin, Lesotho "sports", // 36. De Bruyne Signs 'Straight-forward' New Man City Deal, Club Looks to Extend Sterling's Contract "sports", // 37. S/Eagles Manager Rohr Unfazed by Critics, Insists Team Did Well in Friendlies "health", // 38. Mixing Covid Vaccines Increases Reports of Mild Side-effects "business", // 39. New Export Rule Leaves Tonnes of Cocoa Beans Trapped at Nigerian Ports "sports", // 40. Nigeria FA to Investigate Penalty Shootout for Match Fixing "business", // 41. Nigeria LNG Generates $108bn, Delivers 5,000 Cargoes in 21 Years "business", // 42. In Durban, Buhari Says Nigeria's Economy Now Restructured from Oil Dependence to Multiple Revenue Sources "sports", // 43. Israeli Footballer Signs for Dubai Club "health", // 44. 300,000 Children Infected with HIV in 2020 "sports", // 45. #EndSARS: Napoli's Osimhen Celebrates First Serie A Goal with 'End Police Brutality' Shirt "entertainment", // 46. Disney Honours Chadwick Boseman With Updated 'Black Panther' Opening Credits "sports", // 47. Edo State Threatens to End Nigeria's Sports Festival on Thursday Due to Lack of Funds "health", // 48. Jeremih Released From Hospital After Undergoing Covid-19 Treatment "health", // 49. Pope's Personal Doctor Dies from Coronavirus 'Complications' "business" // 50. Bitcoin Value Drops by 50% Since November Peak ]"
+
+Researcher: "could you give your response without including the headlines?"
+
+GPT: "[ "politics", "business", "entertainment", "sports", "business", "sports", "politics", "sports", "politics", "health", "sports", "business", "entertainment", "politics", "politics", "politics", "sports", "politics", "tech", "business", "politics", "business", "tech", "politics", "politics", "politics", "sports", "business", "politics", "health", "sports", "sports", "business", "health", "sports", "sports", "sports", "health", "business", "sports", "business", "business", "sports", "health", "sports", "entertainment", "sports", "health", "health", "business" ]"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "Here is the qualitative coding of the news headlines into the six categories "politics", "business", "health", "sports", "tech", and "entertainment":
+
+1. entertainment
+2. politics
+3. sports
+4. politics
+5. politics
+6. politics
+7. sports
+8. sports
+9. politics
+10. sports
+11. health
+12. business
+13. sports
+14. politics
+15. health
+16. business
+17. business
+18. business
+19. sports
+20. sports
+21. tech
+22. business
+23. entertainment
+24. business
+25. politics
+26. health
+27. business
+28. sports
+29. sports
+30. business
+31. politics
+32. business
+33. politics
+34. politics
+35. health
+36. business
+37. politics
+38. entertainment
+39. sports
+40. business
+41. health
+42. health
+43. business
+44. business
+45. sports
+46. business
+47. sports
+48. politics
+49. business
+50. politics"
+
+Researcher: "could you put it into an array?"
+
+GPT: "Certainly, here's the coding of the news headlines in an array format:
+[
+"entertainment", 
+"politics", 
+"sports", 
+"politics", 
+"politics", 
+"politics", 
+"sports", 
+"sports", 
+"politics", 
+"sports", 
+"health", 
+"business", 
+"sports", 
+"politics", 
+"health", 
+"business", 
+"business", 
+"business", 
+"sports", 
+"sports", 
+"tech", 
+"business", 
+"entertainment", 
+"business", 
+"politics", 
+"health", 
+"business", 
+"sports", 
+"sports", 
+"business", 
+"politics", 
+"business", 
+"politics", 
+"politics", 
+"health", 
+"business", 
+"politics", 
+"entertainment", 
+"sports", 
+"business", 
+"health", 
+"health", 
+"business", 
+"business", 
+"sports", 
+"business", 
+"sports", 
+"politics", 
+"business", 
+"politics"
+]"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "Here's the qualitative coding of the news headlines into the specified categories:
+
+1. politics
+2. tech
+3. business
+4. politics
+5. business
+6. business
+7. politics
+8. tech
+9. health
+10. business
+11. entertainment
+12. sports
+13. business
+14. sports
+15. sports
+16. health
+17. business
+18. business
+19. business
+20. sports
+21. health
+22. health
+23. entertainment
+24. sports
+25. business
+26. health
+27. politics
+28. health
+29. entertainment
+30. politics
+31. entertainment
+32. entertainment
+33. entertainment
+34. tech
+35. business
+36. politics
+37. business
+38. business
+39. politics
+40. business
+41. sports
+42. business
+43. business
+44. sports
+45. entertainment
+46. politics
+47. health
+48. business
+49. politics
+50. entertainment"
+
+Researcher: "could you write your response as an array?"
+
+GPT: "[
+    "politics", 
+    "tech", 
+    "business", 
+    "politics", 
+    "business", 
+    "business", 
+    "politics", 
+    "tech", 
+    "health", 
+    "business", 
+    "entertainment", 
+    "sports", 
+    "business", 
+    "sports", 
+    "sports", 
+    "health", 
+    "business", 
+    "business", 
+    "business", 
+    "sports", 
+    "health", 
+    "health", 
+    "entertainment", 
+    "sports", 
+    "business", 
+    "health", 
+    "politics", 
+    "health", 
+    "entertainment", 
+    "politics", 
+    "entertainment", 
+    "entertainment", 
+    "entertainment", 
+    "tech", 
+    "business", 
+    "politics", 
+    "business", 
+    "business", 
+    "politics", 
+    "business", 
+    "sports", 
+    "business", 
+    "business", 
+    "sports", 
+    "entertainment", 
+    "politics", 
+    "health", 
+    "business", 
+    "politics",
+    "entertainment"
+]"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Researcher: "Please qualitatively code the news headlines into the seven categories "politics", "business", "health", “sports”, “tech” and "entertainment". Please write your response into one array with 50 components, one for each headline. For example, if the possible categorizations is "red" and "blue" and headline one is categorized as "red" and headline 2 as "blue", this would be written as ["red", "blue"]. The following are the 50 headlines:" 
+
+GPT: "Here is the categorization for the provided headlines:"
+
+```plaintext
+["sports", "politics", "tech", "sports", "health", "health", "politics", "business", "tech", "sports", "tech", "sports", "business", "business", "politics", "business", "politics", "sports", "sports", "politics", "sports", "health", "entertainment", "politics", "politics", "sports", "business", "politics", "tech", "health", "business", "business", "politics", "health", "sports", "business", "politics", "health", "business", "business", "politics", "health", "business", "tech", "business", "business", "business", "business", "entertainment", "business"]
+```
+
+Please note that some headlines could potentially fit into multiple categories; for example, headline 11 about Google unveiling a subsea cable could also be considered "business". I categorized it as "tech" due to the technological infrastructure focus. When such cases arise, the category with the most direct relation to the content is chosen based on the information provided in the headline."
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "Here is the qualitative coding of the news headlines into the seven categories:
+
+```json
+[
+  "politics",
+  "politics",
+  "health",
+  "entertainment",
+  "sports",
+  "business",
+  "sports",
+  "sports",
+  "sports",
+  "politics",
+  "business",
+  "health",
+  "entertainment",
+  "sports",
+  "health",
+  "business",
+  "politics",
+  "politics",
+  "sports",
+  "tech",
+  "sports",
+  "business",
+  "politics",
+  "sports",
+  "sports",
+  "tech",
+  "sports",
+  "politics",
+  "tech",
+  "business",
+  "sports",
+  "politics",
+  "health",
+  "sports",
+  "sports",
+  "business",
+  "entertainment",
+  "politics",
+  "business",
+  "sports",
+  "health",
+  "sports",
+  "business",
+  "politics",
+  "politics",
+  "health",
+  "politics",
+  "politics",
+  "health",
+  "entertainment"
+]
+```"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "Here are the qualitative categorizations for each headline:
+
+```
+[
+  "sports",            // 1. Germany-France Heavyweight Clash Set to Light Up Euro 2020
+  "business",          // 2. Tesla's Musk Says He Will Pay Over $11bn in Tax this Year
+  "entertainment",     // 3. Kanye West Sneakers Fetch Record $1.8M at Private Sale
+  "sports",            // 4. AFCON 2021: Nigeria to Play Egypt, Holders Algeria Face Ivory Coast
+  "politics",          // 5. Nigeria: Purported Endorsement of Consensus Chairman Divides APC Governors
+  "politics",          // 6. Trump 'Planning to Declare Victory if it Looks Like He's Ahead' in Tuesday's Election
+  "sports",            // 7. Nigeria's Super Falcons Land in America for Summer Series
+  "entertainment",     // 8. 'The Milkmaid' is Nigeria's Official Submission for 2021 Oscars
+  "politics",          // 9. Only God Will Take Me Out of Brasilia': Defiant Bolsonaro Talks Tough
+  "health",            // 10. Olympic Village Confirms First Covid Case Days Before Tokyo Games
+  "politics",          // 11. US Attorney General Barr Resigns
+  "business",          // 12. Nigeria: Central Bank Chief, Comms Minister Settle Banks, MTN's Dispute over Commission
+  "health",            // 13. Nigeria: NDLEA, DSS Seal Off Abuja Hotel to 'Stop Launch of New Psychoactive Drink'
+  "politics",          // 14. Igbo Committed to Nigeria's Unity But Most Vulnerable in Terms of Insecurity, Ohanaeze Says
+  "politics",          // 15. In a Dramatic Shift, Former SGF Kingibe Says Nigeria's Unity Negotiable
+  "business",          // 16. Ford To Convert British Factory into Electric Vehicle Plant with $315m
+  "health",            // 17. Nigeria Orders Reactivation of Covid Isolation Centres Nationwide
+  "sports",            // 18. Klopp Laments Penalty Chances after Shock Defeat at Southampton
+  "business",          // 19. Peugeot Forecasts Nigeria to Import $7.5bn Worth of Used Vehicles, Motorcycles in 2021
+  "politics",          // 20. Running Mate: Tinubu Working on Options, Okowa, Wike Top PDP's List, Obi, Kwankwaso Still Consulting
+  "politics",          // 21. Former Republicans and Democrats Form New Third US Political Party
+  "tech",              // 22. Amazon to Begin Drone Deliveries in California This Year
+  "politics",          // 23. Nigeria: Tension High, Don't Heat Polity Further, Ex-Sokoto Governor Bafawara Cautions Politicians
+  "health",            // 24. Getting Covid-19 Vaccine is of Utmost Concern to Nigeria, Says VP Osinbajo
+  "business",          // 25. OPEC Mandates Nigeria to Cut Production by 939,000bpd in Three Months
+  "business",          // 26. Nigeria: Flour Mills Acquires Majority Stake in Honeywell Flour Mills For N80bn
+  "business",          // 27. All Set for Zenith Bank's 7th Annual International Trade Seminar on Non-Oil Export
+  "tech",              // 28. Mauritius to Have Presence in Space as Satellite Set for Launch
+  "entertainment",     // 29. DMX Posthumous Album Due for Release May 28
+  "politics",          // 30. Nigeria: Court Restrains Buni from Parading Himself as APC Interim Chairman
+  "politics",          // 31. Okupe Withdraws as Peter Obi's Running Mate, Paves Way for Substantive VP Candidate
+  "business",          // 32. Twitter Stock Soars As Tesla CEO Elon Musk Reveals 9.2% Stake
+  "health",            // 33. Niger State Governor Tests Positive to COVID-19
+  "politics",          // 34. Nigeria: EFCC Arrests Ex-Imo Governor Okorocha
+  "sports",            // 35. Anthony Joshua v Tyson Fury Might Not Happen Until 2023, Steve Bunce Fears
+  "health",            // 36. UK Doctors Seek Review of 12-week Gap Between Vaccine Doses
+  "politics",          // 37. Nigeria: My Meeting with Tinubu Not About Presidency, Governors' Chairman Fayemi Says
+  "health",            // 38. Covid-19: Court Orders Reopening of Popular Abuja Markets
+  "health",            // 39. About 3,000 on Singapore Cruise Ship Confined to Cabins after Suspected Covid Case
+  "sports",            // 40. Nigeria Reach Qatar 2022 Final Qualifiers after Draw with Cape Verde
+  "health",            // 41. Single-Shot Johnson & Johnson Vaccine Safe, US Regulators Say
+  "business",          // 42. GAGE Awards Announces Panel of Judges as Nominations Come to a Close
+  "business",          // 43. NNPC-Sahara JV Mulls Jetty Construction Across West Africa to Boost LPG Supply
+  "business",          // 44. Stanbic IBTC Reels out PMI number for Some African Economies
+  "politics",          // 45. Nigeria: Only God Can Take My Life, Says APC Leader Tinubu
+  "politics",          // 46. Nigeria: APC May Annul Last Week's Ward Congresses
+  "business",          // 47. Oil Prices Head for $100 as Bonny Light Sells for $95
+  "politics",          // 48. Nigeria: Federalism, LG Autonomy Top Demands at Constitution Review Hearings
+  "sports",            // 49. Barcelona Postpone Presidential Election Due to Covid-19
+  "business"           // 50. Tesla Starts Delivery of Shanghai-made Model Y SUVs in China
+]
+```"
+
+Researcher: "could you give your answer as an array with only the categories?"
+
+GPT: "Certainly, here is the categorization of the headlines as an array with only the categories:
+
+```
+[
+  "sports", "business", "entertainment", "sports", "politics", "politics", "sports", "entertainment",
+  "politics", "health", "politics", "business", "health", "politics", "politics", "business", "health",
+  "sports", "business", "politics", "politics", "tech", "politics", "health", "business",
+  "business", "business", "tech", "entertainment", "politics", "politics", "business", "health",
+  "politics", "sports", "health", "politics", "health", "health", "sports", "health", "business",
+  "business", "business", "politics", "politics", "business", "politics", "sports", "business"
+]
+```"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "[ "sports", "business", "politics", "politics", "business", "politics", "business", "politics", "tech", "sports", "entertainment", "sports", "politics", "politics", "tech", "entertainment", "health", "business", "sports", "entertainment", "politics", "health", "sports", "politics", "politics", "tech", "politics", "business", "politics", "sports", "entertainment", "politics", "politics", "entertainment", "sports", "politics", "health", "health", "health", "business", "politics", "health", "business", "sports", "business", "business", "sports", "business", "business", "tech" ]"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "[
+  "business",           // 1. Twitter Stock Soars As Tesla CEO Elon Musk Reveals 9.2% Stake
+  "sports",             // 2. No Title Defence for Djokovic as World No 1 Deported from Australia
+  "business",           // 3. Bank of England Tipped for Biggest Interest Rate Hike in 27 Years as Inflation Soars
+  "politics",           // 4. Nigeria's South-South Governors Demand Increase in Oil Revenue Payments from 2.5% to 10%
+  "business",           // 5. NNPC, Sahara's Two New Vessels Push Companies' JV Investments to Over $300m
+  "politics",           // 6. Buhari Seeks Senate Approval for $4.179bn, €710m External Loans
+  "sports",             // 7. Lionel Messi Agrees to Join PSG on Two-year Deal
+  "sports",             // 8. Torres Nets Hat-trick to Help Champions Man City Beat Newcastle 4-3
+  "business",           // 9. Shrinking Flight Services Worry Nigerian Travellers After Aero and Dana's Exit
+  "health",             // 10. Saudi Arabia Hands Over 23 Ventilators to Nigeria
+  "sports",             // 11. Ibrahimovic Winner Extends Milan's 24-match Unbeaten Run
+  "tech",               // 12. Billionaire Adventurer Richard Branson Reaches Space in His Own Ship
+  "sports",             // 13. Zidane Tasks Real Madrid to Play Inter Like Champions League Final
+  "health",             // 14. Coronavirus Outbreaks Make It 'Morally Wrong' to Continue Playing, Says Newcastle Boss Bruce
+  "business",           // 15. Oil Prices Bullish as 2022 Market Outlook Remains Positive
+  "business",           // 16. Zambia Seals Debt-Funded Deal to Acquire Glencore's Mopani Mine
+  "entertainment",      // 17. Tiwa Savage's 'Celia' Makes Time Magazine's Best Albums of 2020 List
+  "business",           // 18. BA Suspends Sales of Short-Haul Tickets from Heathrow
+  "health",             // 19. Newly-elected US Lawmaker, 41, Dies from Covid
+  "sports",             // 20. Ola Aina on Target as Fulham Claim First Victory of the Season
+  "politics",           // 21. Biden Picks Diverse, Obama-era Officials for Top Jobs, John Kerry Named Climate Envoy
+  "health",             // 22. WHO Says Nigeria Pre-qualified for Covid-19 Vaccines, Not Disqualified
+  "health",             // 23. India Delivers Covid-19 Jabs for 'World's Biggest Vaccination Drive'
+  "sports",             // 24. West Ham 1-3 Liverpool: Classy Reds End Hammers Perfect Start to 2021
+  "politics",           // 25. Nigeria Court Orders FG to Pay Bayelsa State $951 Million Derivative Arrears
+  "sports",             // 26. Nigeria's National Sports Festival Postponed Indefinitely
+  "business",           // 27. Nigeria's Actual Daily Oil Production Unknown, NEITI Insists
+  "sports",             // 28. Naomi Osaka Cries at Cincinnati Masters Press Conference
+  "business",           // 29. Russia-Ukraine War: Nigeria Looks to Canada for Emergency Potash Supply
+  "politics",           // 30. Nigeria: Unending Crisis May Tear PDP Apart, Former Kano Governor Kwankwaso Says
+  "tech",               // 31. Hyundai to Make Flying Cars Available by 2028
+  "tech",               // 32. Bidder Pays $28m for Space Trip with Amazon's Bezos
+  "business",           // 33. Nigeria: How Trinity Spirit's Owners Accumulated Over $200m Debts Before Vehicle Exploded
+  "business",           // 34. Nigeria Lost $178bn to Tax Evasion by Multinationals in 10 Years, Inland Revenue Boss Says
+  "politics",           // 35. Atiku: After Seven Years of APC's Incompetence, Nigeria Needs Unifier
+  "tech",               // 36. Alphabet Beats Expectations on Google Ad Spike
+  "entertainment",      // 37. Wizkid Releases 'Smile' Video Featuring H.E.R
+  "politics",           // 38. Pelosi Calls for China Winter Olympics Boycott
+  "business",           // 39. OPEC Fails to Agree on February Oil Production Output, Meeting Continues Tuesday
+  "business",           // 40. Musk Says Twitter Takeover Deal 'Temporarily on Hold' Over Report About Fake Accounts
+  "politics",           // 41. EU Signs Gas Deal with Israel, Egypt in Bid to Ditch Russia
+  "sports",             // 42. Euro 2020: Thorgan Hazard Fires Belgium Past Portugal and Into Quarterfinals
+  "sports",             // 43. Messi Nets Double as Barcelona Beat Huesca in Record-setting Night
+  "sports",             // 44. Australian Open: Peng Shuai T-Shirt Ban Reversed after Outcry
+  "business",           // 45. NNPC May Float Initial Public Offering in 2024, GMD Kyari Reveals
+  "politics",           // 46. Ondo Governor Akeredolu, Others Sign Peace Deal Ahead of Election
+  "tech",               // 47. 2022: Nigerian Women in Tech Break New Grounds
+  "health",             // 48. Australia Urges Calm Over AstraZeneca's Covid Vaccine After South Africa Suspends Use
+  "sports",             // 49. Burnley Shock Liverpool, End 68-game Unbeaten Run at Anfield
+  "entertainment"       // 50. Actor Jamie Foxx Says 'Heart Is Shattered' after Death of Sister
+]"
+
+Researcher: "could you give your response as an array with only the categories?"
+
+GPT: "[ "business", "sports", "business", "politics", "business", "politics", "sports", "sports", "business", "health", "sports", "tech", "sports", "health", "business", "business", "entertainment", "business", "health", "sports", "politics", "health", "health", "sports", "politics", "sports", "business", "sports", "business", "politics", "tech", "tech", "business", "business", "politics", "tech", "entertainment", "politics", "business", "business", "politics", "sports", "sports", "sports", "business", "politics", "tech", "health", "sports", "entertainment" ]"
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GPT: "[ "politics", "business", "health", "health", "politics", "sports", "sports", "business", "health", "business", "sports", "health", "health", "sports", "health", "politics", "health", "politics", "health", "business", "tech", "business", "business", "entertainment", "politics", "politics", "business", "politics", "tech", "sports", "entertainment", "business", "health", "politics", "sports", "business", "politics", "health", "business", "sports", "sports", "sports", "business", "entertainment", "entertainment", "business", "sports", "business", "health", "politics" ]"
