@@ -1,7 +1,7 @@
-\section*{Results}
-\subsection*{First "project"}
-Small Dataset:
-\begin{table}[h]
+\section{Results}
+\subsection{Constructed Dataset}
+When asked to simply sort the data into categories ChatGPT UiO sorted every response into its own category
+\begin{table}[ht]
     \centering
     %\begin{small}
         \begin{tabular}{@{}lllllllllllll@{}}\toprule        % l refers to left-aligned text, change to r for right-aligned
@@ -17,27 +17,26 @@ Small Dataset:
             \bottomrule
         \end{tabular}
     %\end{small}
-    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+    \caption{Placeholder}
 \end{table}
 
-\subsection*{Second "project"}
-
+\subsection{News Headlines Dataset}
 ChatGPT UiO:
 \begin{table}[h]            % [h] gives placement
     \centering
     \begin{tabular}{@{}lllllllllll@{}}\toprule
         \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
         \midrule
-        \textbf{Ground truth} & \cellcolor[HTML]{FFFFFF} 1  & 0.8993204127863076 & 0.0.8916319720964929 & 0.8942869655828564\\
+        \textbf{Ground truth} & \cellcolor[HTML]{FFFFFF} 1  & 0.8968636487125565 & 0.7811913027230619 & 0.8942869655828564\\
         \hdashline
-        \textbf{Run 1} & 0.8993204127863076 & 1 & 0.9345421221444001 & 0.9471908021465681\\
+        \textbf{Run 1} & 0.8968636487125565 & 1 & 0.8183344707886739 & 0.9497358619545713\\
         \hdashline
-        \textbf{Run 2} & 0.8916319720964929 & 0.9345421221444001 & 1 & 0.9395825151798931\\
+        \textbf{Run 2} & 0.7811913027230619 & 0.8183344707886739 & 1 & 0.8231740262291861\\
         \hdashline
-        \textbf{Run 3} & 0.8942869655828564 & 0.9471908021465681 & 0.9395825151798931 & 1\\
+        \textbf{Run 3} & 0.8942869655828564 & 0.9497358619545713 & 0.8231740262291861 & 1\\
         \bottomrule
     \end{tabular}
-    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+    \caption{Cohen's Kappa Score for three different runs of categorization done by ChatGPt UiO.}
 \end{table}
 
 Llama3:
@@ -59,7 +58,7 @@ Llama3:
 \end{table}
 
 Centroid Method:
-\begin{table}[h]
+\begin{table}[ht]
     \centering
     \begin{tabular}{@{}lllllllllll@{}}\toprule
         \textbf{Run} & \textbf{Ground truth}\\
@@ -71,3 +70,244 @@ Centroid Method:
     \end{tabular}
     \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
 \end{table}
+
+\begin{tikzpicture}
+    \begin{axis}[title  = Cohen Kappa Score between true categorization 
+                            and three categorization-runs done by Llama3 by category.,
+        ybar,
+        %bar width=.3cm,
+        legend style={at={(0.85,0.9)},
+            anchor=north west, 
+            legend columns=1,
+            %text width=2cm,          % Adjust the text width 
+            align=left,
+            },
+        xtick=data,
+        %nodes near coords,
+        %nodes near coords align={vertical},
+        %nodes near coords style={font=\tiny,
+            %rotate=90,
+            %anchor=west,
+            %/pgf/number format/.cd, % Enter the number format configuration mode
+            %fixed zerofill,         % Enable fixed point numbers and fill with zeros if needed
+            %precision=4,            % Number of digits after the decimal point
+            %/tikz/.cd              % Go back to TikZ styling mode
+        %},
+        grid=both, % Adds major and minor grid lines
+        major grid style={ % Customizes the style of the major grid lines (optional)
+            draw=gray!45, % Color and transparency of grid lines
+            line width=0.5pt % Width of grid lines
+        },
+        minor grid style={draw=gray!40, line width=0.25pt, dotted},
+        minor y tick num=2, % Sets the number of minor ticks between major y ticks
+        minor x tick num=2, % Sets the number of minor ticks between major x ticks
+        ymin=0,ymax=1,
+        ylabel={(IRR-score)},
+        y axis line style = { opacity = 1 },
+        axis x line       = bottom,
+        tickwidth         = 0pt,
+        enlarge x limits  = 0.2,
+        x tick label style = {rotate=45, anchor=east, yshift=-2pt},
+        symbolic x coords = {Attainment Value, Cost, Intrinsic Value, Media Triggered, Event Triggered, Intrinsic Social, Utility Value, Mastery, Physiological/emotional, Social Persuasion, Vicarious},
+    ]
+    \addplot[fill=myorange, draw=black]
+    coordinates {  (Attainment Value,0.8969)         (Cost,0.8748)
+                            (Intrinsic Value,0.7758)};
+    \addplot[fill=myyellow, draw=black] 
+    coordinates {  (Attainment Value,0.7812)         (Cost,0.8699)
+                            (Intrinsic Value,0.8213)};
+    \addplot[fill=myblue, draw=black]
+     coordinates {  (Attainment Value,0.8943)         (Cost,0.8651)
+                            (Intrinsic Value,0.0)};
+    \legend{Run 1, Run 2, Run 3}
+    \end{axis}
+\end{tikzpicture}
+
+\subsection{Drexl-Dataset}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}llllllllllll@{}}\toprule
+        \multicolumn{4}{c}{\textbf{Ground truth}} \\
+        \toprule
+        \textbf{Placeholder}  & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
+        \midrule
+        \textbf{Mean} & 0.14530656385095153  & 0.13801863874833842 & 0.1352860854372059 \\
+        \hdashline
+        \textbf{Max} & 1 & 1 & 1 \\
+        \hdashline
+        \textbf{Min} & -0.8333333333333335 & -0.7741935483870968 & -0.7741935483870968 \\
+        \hdashline
+        \textbf{Standard deviation} & 0.2801791100716131 & 0.2828103036333998 & 0.2833245244644474 \\
+        \hdashline
+        \textbf{Mean} & 0.09710238063757502 & 0.08268375910752898 & 0.08549254815367584 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+\end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}llllllllllll@{}}\toprule
+        \textbf{Placeholder}  & \textbf{Run 1 and Run 2} & \textbf{Run 1 and Run 3} & \textbf{Run 2 and Run 3}\\ 
+        \midrule
+        \textbf{Mean} & 0.3476742436321065  & 0.33784431814585963 & 0.338216959184075 \\
+        \hdashline
+        \textbf{Max} & 1 & 1 & 1 \\
+        \hdashline
+        \textbf{Min} & -0.6779661016949154 & -0.8333333333333335 & -0.8333333333333335 \\
+        \hdashline
+        \textbf{Standard deviation} & 0.3304004606953641 & 0.3263580312202114 & 0.32582651114299754 \\
+        \hdashline
+        \textbf{Mean} & 0.18553896960531288 & 0.16435010456460294 & 0.1704893419990963 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
+\end{table}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[title  = Cohen Kappa Score between true categorization 
+                            and three categorization-runs done by Llama3 by category.,
+        ybar,
+        bar width=.3cm,
+        width=\textwidth,
+        height=.5\textwidth,
+        legend style={at={(0.85,0.9)},
+            anchor=north west, 
+            legend columns=1,
+            %text width=2cm,          % Adjust the text width 
+            align=left,
+            },
+        xtick=data,
+        %nodes near coords,
+        %nodes near coords align={vertical},
+        %nodes near coords style={font=\tiny,
+            %rotate=90,
+            %anchor=west,
+            %/pgf/number format/.cd, % Enter the number format configuration mode
+            %fixed zerofill,         % Enable fixed point numbers and fill with zeros if needed
+            %precision=4,            % Number of digits after the decimal point
+            %/tikz/.cd              % Go back to TikZ styling mode
+        %},
+        grid=both, % Adds major and minor grid lines
+        major grid style={ % Customizes the style of the major grid lines (optional)
+            draw=gray!45, % Color and transparency of grid lines
+            line width=0.5pt % Width of grid lines
+        },
+        minor grid style={draw=gray!40, line width=0.25pt, dotted},
+        minor y tick num=2, % Sets the number of minor ticks between major y ticks
+        minor x tick num=2, % Sets the number of minor ticks between major x ticks
+        ymin=0,ymax=0.4,
+        ylabel={(IRR-score)},
+        y axis line style = { opacity = 1 },
+        axis x line       = bottom,
+        tickwidth         = 0pt,
+        enlarge x limits  = 0.05,
+        x tick label style = {rotate=45, anchor=east, yshift=-2pt},
+        symbolic x coords = {Attainment Value, Cost, Intrinsic Value, Media Triggered, Event Triggered, Intrinsic Social, Utility Value, Mastery, Physiological/emotional, Social Persuasion, Vicarious},
+    ]
+    \addplot[fill=myyellow, draw=black] 
+    coordinates {  (Attainment Value,0.0124)         (Cost,0.1182)
+                            (Intrinsic Value,0.0487)  (Media Triggered,0.3285) 
+                            (Event Triggered,0.0808)        (Intrinsic Social,0.0216)
+                            (Utility Value,0.0819)      (Mastery,0.1056)
+                            (Physiological/emotional,0.0469)    (Social Persuasion,0.1619)
+                            (Vicarious,0.0616)};
+    \addplot[fill=myorange, draw=black]
+     coordinates {  (Attainment Value,0.0096)         (Cost,0.1059)
+                            (Intrinsic Value,0.02325)  (Media Triggered,0.3333) 
+                            (Event Triggered,0.0774)        (Intrinsic Social,0.0140)
+                            (Utility Value,0.0530)      (Mastery,0.0776)
+                            (Physiological/emotional,0.0439)    (Social Persuasion,0.1084)
+                            (Vicarious,0.0630)};
+    \addplot[fill=myblue, draw=black]
+     coordinates {  (Attainment Value,0.0067)         (Cost,0.1354)
+                            (Intrinsic Value,0.0165)  (Media Triggered,0.3112) 
+                            (Event Triggered,0.0727)        (Intrinsic Social,0.0187)
+                            (Utility Value,0.1060)      (Mastery,0.0092)
+                            (Physiological/emotional,0.0363)    (Social Persuasion,0.1627)
+                            (Vicarious,0.0649)};
+    \legend{Run 1, Run 2, Run 3}
+    \end{axis}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \begin{axis}[title  =   Cohen Kappa Score between true categorization 
+                            and three categorization-runs done by Llama3 by category.,
+        boxplot/draw direction = y,
+	    x axis line style = {opacity=0},
+		axis x line* = bottom,
+		axis y line = left,
+		enlarge y limits,
+		xtick = {1, 2, 3, 4, 5, 6},
+		xticklabel style = {align=center, font=\small, rotate=60},
+		xticklabels = {GT x R1, GT x R2, GT x R3, R1 x R2, R1 x R3, R2 x R3},
+		xtick style = {draw=none}, % Hide tick line
+		ylabel = {Cohen's Kappa Score},
+		ytick = {-1, -0.5, 0, 0.5, 1},
+        cycle list={{blue, red}},
+      ]
+      \addplot+[
+      boxplot prepared={
+        median=0.1270,
+        upper quartile=0.3773,
+        lower quartile=-0.0645,
+        upper whisker=1.0,
+        lower whisker=-0.8334
+      }, fill, draw=black
+      ] coordinates {};
+      %
+      \addplot+[
+      boxplot prepared={
+        median=0.1270,
+        upper quartile=0.3125,
+        lower quartile=-0.0645,
+        upper whisker=1.0,
+        lower whisker=-0.7742
+      },fill, draw=black
+      ] coordinates {};
+      %
+      \addplot+[
+      boxplot prepared={
+        median=0.1270,
+        upper quartile=0.3125,
+        lower quartile=-0.0645,
+        upper whisker=1.0,
+        lower whisker=-0.7742
+      },fill, draw=black
+      ] coordinates {};
+      %%%%%% inter-runs
+      \addplot+[
+      boxplot prepared={
+        median=0.3774,
+        upper quartile=0.6071,
+        lower quartile=0.0984,
+        upper whisker=1.0,
+        lower whisker=-0.6780
+      },fill, draw=black
+      ] coordinates {};
+      %
+      \addplot+[
+      boxplot prepared={
+        median=0.3774,
+        upper quartile=0.6071,
+        lower quartile=0.0984,
+        upper whisker=1.0,
+        lower whisker=-0.8334
+      },fill, draw=black
+      ] coordinates {};
+      %
+      \addplot+[
+      boxplot prepared={
+        median=0.3774,
+        upper quartile=0.6071,
+        lower quartile=0.0984,
+        upper whisker=1.0,
+        lower whisker=-0.8334
+      },fill, draw=black
+      ] coordinates {};
+    \end{axis}
+\end{tikzpicture}
+
+\end{center}
