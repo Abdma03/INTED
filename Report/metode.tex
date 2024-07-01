@@ -11,12 +11,14 @@ Although this is not always true, especially considering bias, it is generally r
 \begin{flushleft}
 The process started with the creation of a dataset centered around the question "Why did you choose the Honours program". 25 fictitious responses to this question were made, which made up the dataset. 
 The dataset was then coded into one of the four categories "Career Opportunities", "Social Life", "Learning" and "Other", which was used for the responses that did not fit any of the aforementioned categories.
-This coding formed what we will henceforth refer to as the ground truth.\\
+This coding formed what will henceforth be refered to as the ground truth.\\
 Based on this dataset, ChatGPT UiO was prompted in different ways. \\
 \begin{itemize}
-    \item (In the beginning), ChatGPT UiO was simply asked to sort the responses into categories using the following prompt: (prompt).
-    \item The prompt was then updated to the following: (prompt)\\
-    \item and (prompt)\\
+    \item (In the beginning), ChatGPT UiO was simply asked to sort the responses into categories using the following prompt: \\[5pt]
+    \say{We would like you to qualitatively code the responses to the question "Why did you choose the Honours-program?":}, followed by the numbered list of the responses.\\
+    \item The prompt was then updated to the following:\\[5pt]
+    \say{We would like you to qualitatively categorize the responses to the question "Why did you choose the Honours-program?" into a number of categories that you see fit. The following are the responses:}, followed by the numbered list of responses.
+    \item and \say{Could you do the same as in the previous question, but only make 4 categories?}\\
 \end{itemize}
 Finally ChatGPT UiO was asked to sort the data into the four (predefined) categories using the following prompt: (prompt)\\
 This process was repeated three times. The data was collected, sorted into a list and each category was assigned
@@ -28,29 +30,52 @@ To measure the Inter Rater Reliability, Cohen's Kappa Score was used using the b
 We then used the centroid method on this dataset using the code provided from the Colab. - have to specify the parameters used
 
 \subsection{News Headlines Dataset}
-For this project we used a pre-categorized dataset from Hugging Face \url{https://huggingface.co/datasets/okite97/news-data}, containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
-The dataset had already been split into a training- and test-dataset, and we used the test-dataset which consisted of 828 headlines and used the first 500. \\
-We then proceeded to manually prompt ChatGPT UiO by asking it to categorize the first 500 headlines by giving it chunks of 50 at a time and starting a new chat per chunk. This prompting 
-was done using the following prompt:\\
-(prompt)\\
-The prompt had to be somewhat modified in the process, since the format of the output from GPT varied, despite the specifications in the prompt. (Explain further)\\[10pt]
-The dataset of the 500 first datapoints were coded by ChatGPT UiO three separate times and each run was collected into a single document. This text was processed using the following code:\\
-(code)\\
-The produced lists were then used as a basis for calculating the Inter Rater Reliability using Cohen's Kappa test using the same procedure as we did in (first project).
+For this project a pre-categorized dataset from Hugging Face was used (\url{https://huggingface.co/datasets/okite97/news-data}), containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
+The dataset had already been split into a training- and test-dataset, of which the test-dataset was used for this project. 
+The test dataset consisted of 828 headlines, of which the first 500 were used. \\
 
-We also used the centroid method to obtain a categorization. The centroid method gives its result as a distribution between the different categories. We wrote a script to obtain only the most probable category two different ways.
-First we set $\alpha = 150$ to ~shift the weight to get a value greater than 0.50 for all of them~ and compared this categorization to the ground truth using Cohen's Kappa Score using the following code:\\
+\subsubsection{ChatGPT UiO}
+ChatGPT UiO was then manually prompted to categorize the first 500 headlines by giving it chunks of 50 headlines at a time and starting a new chat per chunk. This prompting 
+was done using the following prompt:\\[5pt]
+\say{Please qualitatively code the news headlines into the seven categories "politics", "business", "health", “sports”, “tech” and "entertainment". Please write your response into one array with 50 components, one for each headline. For example, if the possible categorizations is "red" and "blue" and headline one is categorized as "red" and headline 2 as "blue", this would be written as ["red", "blue"]. Make sure to give a list with only the categories, not the headlines themselves. The following are the 50 headlines: },
+ followed by 50 headlines.\\[5pt]
+The prompt had to be somewhat modified in the process, since the format of the output from GPT varied, despite the specifications in the prompt. 
+For example, often the additional prompt \say{Could you rather give a list with only the categories?} had to be used to get output of the current format.
+The dataset of the 500 first datapoints were coded by ChatGPT UiO three separate times. A complete log of the inputs and outputs of all the three rounds can be found in the appendix.\\[10pt]
+The correctly formatted outputs were then collected into a txt file, which was processed using the following code:\\
 (code)\\
-We then set $\alpha = 15$ and excluded the data where the greatest value in the distribution was smaller than 0.50, and constructed a ground truth where we excluded the same values, 
-and used Cohen's Kappa Score to compare the two using the following code:\\
-(code)\\
+%\lstinputlisting[language=Python]{filename_here}\\ 
+The produced lists were then used as a basis for calculating the Inter Rater Reliability using Cohen's Kappa test using the same procedure with the constructed dataset.\\
 
-Llama\\
-Categorization was done using Llama3 but using prompting in the terminal using a Powershell script, and using 3"cloud server".\\
+\subsubsection{Centroid method}
+
+In addition, the centroid method was also used to obtain a categorization. 
+The centroid method gives its result as a probability distribution between the different categories. 
+Two different scripts were written to obtain the category the model deemed more probable.
+First the parameter $\alpha$ was set to $150$ in order to obtain a confidence value greater than 0.50 for one category for all of the headlines. 
+A Cohen's Kappa Score was then obtained for this categorization compared to the ground truth using the following code:\\
+(code)\\
+%\lstinputlisting[language=Python]{filename_here}\\ 
+the parameter $\alpha$ was set to $15$, and the data where the greatest value in the distribution was smaller than 0.50 was excluded. 
+A ground truth was constructed where the same values were exlcuded, 
+and a Cohen's Kappa Score was obtained using the following code:\\
+(code)\\
+%\lstinputlisting[language=Python]{filename_here}\\ 
+
+\subsubsection{Llama3}
+Categorization was done using Llama3 in two ways: 
+\begin{enumerate}
+\item Prompting in the terminal using a Powershell script.
+\item Importing ollama and using ollama.chat.
+\end{enumerate}
+
 The prompting in the Powershell was done using the following code:\\
-(code)
+(code)\\
+%\lstinputlisting[language=Python]{filename_here}\\ 
+
 The prompting with the 3"cloud server" was done using the following code:\\
-(code)
+(code)\\
+%\lstinputlisting[language=Python]{filename_here}\\ 
 
 \section{Drexl Dataset}
 - removed row 501 - empty
