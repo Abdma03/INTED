@@ -7,13 +7,13 @@ When asked to simply sort the data into categories ChatGPT UiO sorted every resp
         \begin{tabular}{@{}lllllllllllll@{}}\toprule        % l refers to left-aligned text, change to r for right-aligned
             \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
             \midrule
-            \textbf{Ground truth} & 1  & 0.7635933806146572 & 0.8842592592592593 & 0.8842592592592593\\
+            \textbf{Ground truth} & 1  & 0.764 & 0.884 & 0.884\\
             \hdashline
-            \textbf{Run 1} & 0.7635933806146572 & 1 & 0.7530864197530864 & 0.7530864197530864\\
+            \textbf{Run 1} & 0.764 & 1 & 0.753 & 0.753\\
             \hdashline
-            \textbf{Run 2} & 0.8842592592592593 & 0.7530864197530864 & 1 & 0.8798076923076923\\
+            \textbf{Run 2} & 0.884 & 0.753& 1 & 0.880\\
             \hdashline
-            \textbf{Run 3} & 0.8842592592592593 & 0.7530864197530864 & 0.8798076923076923 & 1\\
+            \textbf{Run 3} & 0.884 & 0.753 & 0.880 & 1\\
             \bottomrule
         \end{tabular}
     %\end{small}
@@ -27,13 +27,13 @@ ChatGPT UiO:
     \begin{tabular}{@{}lllllllllll@{}}\toprule
         \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
         \midrule
-        \textbf{Ground truth} & \cellcolor[HTML]{FFFFFF} 1  & 0.8968636487125565 & 0.7811913027230619 & 0.8942869655828564\\
+        \textbf{Ground truth} & \cellcolor[HTML]{FFFFFF} 1  & 0.897 & 0.781 & 0.894\\
         \hdashline
-        \textbf{Run 1} & 0.8968636487125565 & 1 & 0.8183344707886739 & 0.9497358619545713\\
+        \textbf{Run 1} & 0.870 & 1 & 0.818 & 0.950\\
         \hdashline
-        \textbf{Run 2} & 0.7811913027230619 & 0.8183344707886739 & 1 & 0.8231740262291861\\
+        \textbf{Run 2} & 0.781 & 0.818 & 1 & 0.823\\
         \hdashline
-        \textbf{Run 3} & 0.8942869655828564 & 0.9497358619545713 & 0.8231740262291861 & 1\\
+        \textbf{Run 3} & 0.894 & 0.950 & 0.823 & 1\\
         \bottomrule
     \end{tabular}
     \caption{Cohen's Kappa Score for three different runs of categorization done by ChatGPt UiO.}
@@ -45,13 +45,13 @@ Llama3:
     \begin{tabular}{@{}llllllllllll@{}}\toprule
         \textbf{Run}  & \textbf{Ground truth} & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
         \midrule
-        \textbf{Ground truth} & 1  & 0.8748354085622594 & 0.869899822863605 & 0.8650661176023748\\
+        \textbf{Ground truth} & 1  & 0.875 & 0.870 & 0.865\\
         \hdashline
-        \textbf{Run 1} & 0.8748354085622594 & 1 & 0.8183344707886739 & 0.9525706697021438\\
+        \textbf{Run 1} & 0.875 & 1 & 0.818& 0.953\\
         \hdashline
-        \textbf{Run 2} & 0.869899822863605 & 0.9550195664885774 & 1 & 0.9650587013816788\\
+        \textbf{Run 2} & 0.870 & 0.955 & 1 & 0.965\\
         \hdashline
-        \textbf{Run 3} & 0.8650661176023748 & 0.95257066970214383 & 0.9650587013816788 & 1\\
+        \textbf{Run 3} & 0.865 & 0.953 & 0.965 & 1\\
         \bottomrule
     \end{tabular}
     \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
@@ -75,7 +75,7 @@ Centroid Method:
     \begin{axis}[title  = Cohen Kappa Score between true categorization 
                             and three categorization-runs done by Llama3 by category.,
         ybar,
-        %bar width=.3cm,
+        %width=\textwidth,
         legend style={at={(0.85,0.9)},
             anchor=north west, 
             legend columns=1,
@@ -83,6 +83,7 @@ Centroid Method:
             align=left,
             },
         xtick=data,
+        x = 2cm,
         %nodes near coords,
         %nodes near coords align={vertical},
         %nodes near coords style={font=\tiny,
@@ -95,30 +96,33 @@ Centroid Method:
         %},
         grid=both, % Adds major and minor grid lines
         major grid style={ % Customizes the style of the major grid lines (optional)
-            draw=gray!45, % Color and transparency of grid lines
+            draw=gray!20, % Color and transparency of grid lines
             line width=0.5pt % Width of grid lines
         },
         minor grid style={draw=gray!40, line width=0.25pt, dotted},
         minor y tick num=2, % Sets the number of minor ticks between major y ticks
         minor x tick num=2, % Sets the number of minor ticks between major x ticks
         ymin=0,ymax=1,
+        xmax =  ,
         ylabel={(IRR-score)},
         y axis line style = { opacity = 1 },
         axis x line       = bottom,
         tickwidth         = 0pt,
-        enlarge x limits  = 0.2,
+        enlarge x limits={upper=0.8,lower=0.6},
         x tick label style = {rotate=45, anchor=east, yshift=-2pt},
-        symbolic x coords = {Attainment Value, Cost, Intrinsic Value, Media Triggered, Event Triggered, Intrinsic Social, Utility Value, Mastery, Physiological/emotional, Social Persuasion, Vicarious},
+        symbolic x coords = {ChatGPT, Llama3, Centroid Method, Centroid Method Excluded, },
     ]
-    \addplot[fill=myorange, draw=black]
-    coordinates {  (Attainment Value,0.8969)         (Cost,0.8748)
-                            (Intrinsic Value,0.7758)};
-    \addplot[fill=myyellow, draw=black] 
-    coordinates {  (Attainment Value,0.7812)         (Cost,0.8699)
-                            (Intrinsic Value,0.8213)};
+    \addplot[fill=mydarkblue, draw=black]
+    coordinates {   (ChatGPT,0.8969) 
+                    (Llama3,0.8748) 
+                    (Centroid Method,0.7758)
+                    (Centroid Method Excluded, 0.8213)};
     \addplot[fill=myblue, draw=black]
-     coordinates {  (Attainment Value,0.8943)         (Cost,0.8651)
-                            (Intrinsic Value,0.0)};
+    coordinates {   (ChatGPT,0.7812)      
+                    (Llama3,0.8699)};
+    \addplot[fill=mywhite, draw=black]
+     coordinates {  (ChatGPT,0.8943)         
+                    (Llama3,0.8651)};
     \legend{Run 1, Run 2, Run 3}
     \end{axis}
 \end{tikzpicture}
@@ -132,15 +136,15 @@ Centroid Method:
         \toprule
         \textbf{Placeholder}  & \textbf{Run 1} & \textbf{Run 2} & \textbf{Run 3}\\ 
         \midrule
-        \textbf{Mean} & 0.14530656385095153  & 0.13801863874833842 & 0.1352860854372059 \\
+        \textbf{Mean} & 0.145  & 0.138 & 0.135 \\
         \hdashline
         \textbf{Max} & 1 & 1 & 1 \\
         \hdashline
-        \textbf{Min} & -0.8333333333333335 & -0.7741935483870968 & -0.7741935483870968 \\
+        \textbf{Min} & -0.833 & -0.774 & -0.774 \\
         \hdashline
-        \textbf{Standard deviation} & 0.2801791100716131 & 0.2828103036333998 & 0.2833245244644474 \\
+        \textbf{Standard deviation} & 0.280 & 0.283 & 0.283 \\
         \hdashline
-        \textbf{Mean} & 0.09710238063757502 & 0.08268375910752898 & 0.08549254815367584 \\
+        \textbf{Mean} & 0.097 & 0.083 & 0.085 \\
         \bottomrule
     \end{tabular}
     \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
@@ -151,15 +155,15 @@ Centroid Method:
     \begin{tabular}{@{}llllllllllll@{}}\toprule
         \textbf{Placeholder}  & \textbf{Run 1 and Run 2} & \textbf{Run 1 and Run 3} & \textbf{Run 2 and Run 3}\\ 
         \midrule
-        \textbf{Mean} & 0.3476742436321065  & 0.33784431814585963 & 0.338216959184075 \\
+        \textbf{Mean} & 0.348  & 0.338 & 0.338 \\
         \hdashline
         \textbf{Max} & 1 & 1 & 1 \\
         \hdashline
-        \textbf{Min} & -0.6779661016949154 & -0.8333333333333335 & -0.8333333333333335 \\
+        \textbf{Min} & -0.678 & -0.833 & -0.833 \\
         \hdashline
-        \textbf{Standard deviation} & 0.3304004606953641 & 0.3263580312202114 & 0.32582651114299754 \\
+        \textbf{Standard deviation} & 0.330 & 0.326 & 0.326 \\
         \hdashline
-        \textbf{Mean} & 0.18553896960531288 & 0.16435010456460294 & 0.1704893419990963 \\
+        \textbf{Mean} & 0.186 & 0.164 & 0.170 \\
         \bottomrule
     \end{tabular}
     \caption{Initial capital structures of large projects (\$1bn.+) \emph{(Finnerty, 2013)}}
@@ -192,7 +196,7 @@ Centroid Method:
         %},
         grid=both, % Adds major and minor grid lines
         major grid style={ % Customizes the style of the major grid lines (optional)
-            draw=gray!45, % Color and transparency of grid lines
+            draw=gray!20, % Color and transparency of grid lines
             line width=0.5pt % Width of grid lines
         },
         minor grid style={draw=gray!40, line width=0.25pt, dotted},
@@ -207,21 +211,21 @@ Centroid Method:
         x tick label style = {rotate=45, anchor=east, yshift=-2pt},
         symbolic x coords = {Attainment Value, Cost, Intrinsic Value, Media Triggered, Event Triggered, Intrinsic Social, Utility Value, Mastery, Physiological/emotional, Social Persuasion, Vicarious},
     ]
-    \addplot[fill=myyellow, draw=black] 
+    \addplot[fill=mydarkblue, draw=black] 
     coordinates {  (Attainment Value,0.0124)         (Cost,0.1182)
                             (Intrinsic Value,0.0487)  (Media Triggered,0.3285) 
                             (Event Triggered,0.0808)        (Intrinsic Social,0.0216)
                             (Utility Value,0.0819)      (Mastery,0.1056)
                             (Physiological/emotional,0.0469)    (Social Persuasion,0.1619)
                             (Vicarious,0.0616)};
-    \addplot[fill=myorange, draw=black]
+    \addplot[fill=myblue, draw=black]
      coordinates {  (Attainment Value,0.0096)         (Cost,0.1059)
                             (Intrinsic Value,0.02325)  (Media Triggered,0.3333) 
                             (Event Triggered,0.0774)        (Intrinsic Social,0.0140)
                             (Utility Value,0.0530)      (Mastery,0.0776)
                             (Physiological/emotional,0.0439)    (Social Persuasion,0.1084)
                             (Vicarious,0.0630)};
-    \addplot[fill=myblue, draw=black]
+    \addplot[fill=mywhite, draw=black]
      coordinates {  (Attainment Value,0.0067)         (Cost,0.1354)
                             (Intrinsic Value,0.0165)  (Media Triggered,0.3112) 
                             (Event Triggered,0.0727)        (Intrinsic Social,0.0187)
@@ -246,7 +250,7 @@ Centroid Method:
 		xtick style = {draw=none}, % Hide tick line
 		ylabel = {Cohen's Kappa Score},
 		ytick = {-1, -0.5, 0, 0.5, 1},
-        cycle list={{blue, red}},
+        cycle list={{mydarkblue, mydarkblue, mydarkblue, myblue, myblue, myblue}},
       ]
       \addplot+[
       boxplot prepared={

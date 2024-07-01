@@ -78,6 +78,25 @@ The prompting with the 3"cloud server" was done using the following code:\\
 %\lstinputlisting[language=Python]{filename_here}\\ 
 
 \section{Drexl Dataset}
-- removed row 501 - empty
+\subsection{Llama3}
+Categorization of the Drexl-dataset were done by Llama3 by prompting through the terminal using a Powershell-script that reads the responses from a file
+and writes the output from Llama3 to a new file. The prompt was the following:\\
+\say{"I will give you a text that is a response to why a female student chose to study physics. 
+I want you to qualitatively categorize this response into however many of the categories I will provide you as you see fit. The following are the categories: Attainment Value, Cost, Intrinsic value, 
+Media Triggered Intrinsic Value, Event Triggered Intrinsic Value, Intrinsic Value (Social), Utility Value, Mastery Experience,
+Physiological or Emotional Arousal, Social Persuasion, Vicarious Experience. I want you to give the response as only a list with a length of 11 where a 1 indicate that a response belongs to the category, and a 0 indicates no belonging.
+An example of this format is [1,0,1,0,1,0,1,0,1,0,1]. Do not explain your reasoning and give only the list as your response."}\\[5pt]
+
+Some of the responses, response 179, 327, 376, 668, 1437, 1771, 2061, 2090, had to be removed since Llama3 was unable to categorize them. In addition to this, row 501 was removed due to being empty. 
+This process was repeated three times. 
+
+\subsection{Ground truth}
+The responses that created problems for Llama3 was also removed from the ground truth to make the data comparable. Additionally, the categories "Intrinsic Value" and "Intrinsic Value (Astronomy)" were merged into one category
+called "Intrinsic Value", as were "Cost (Emotional)", "Cost (Outside Effort)", "Cost (Loss)" and "Cost(Task Effort)"  into "Cost". 
+
+\subsection{Centroid Method}
+In creating the centroids, a list with the responses that were only categorized into a single category were created. From this list nine responses were chosen randomly from each category. Some categories did not have a sufficient number of responses for this.
+For the categories "Attainment Value", "Cost" and "Mastery Experience" more were created by going through the list of responses and singling out excerpts/sentences that the researcher thought fit the category. For "Attainment Value" and "Cost" seven such centroids were made,
+for "Mastery Experience" four were made. These were then added to the list and the centroid for each category was created as a mean for the embedding of these nine chosen responses.
 
 \end{flushleft}
