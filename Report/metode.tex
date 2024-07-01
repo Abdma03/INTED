@@ -7,24 +7,28 @@ A passive voice removes the author from the work, which makes the work done feel
 Since scientific work should be factual by nature, the results should be the same regardless of the individual doing the experiment. 
 Although this is not always true, especially considering bias, it is generally recommended to leave the subject out of the report. 
 
-\subsection*{First "project"}
+\subsection{Constructed Dataset}
 \begin{flushleft}
-We started by creating our own dataset centered around the question "Why did you choose the Honours program".
-We then created 25 fictitious responses to this question, which made up our dataset. We then collectively decided on categories 
-(should we write out the categories?) and sorted each response onto one of these categories to form our "ground truth" that we later 
-compared our other results to. \\
-Based on this dataset, we prompted ChatGPT UiO in different ways. \\
-- We started by asking it to simply sort the responses into categories - (made up a category for each - this should be in results)\\
-- we then proceeded to repeat the same process, but gave it additional instructions.\\[10pt]
+The process started with the creation of a dataset centered around the question "Why did you choose the Honours program". 25 fictitious responses to this question were made, which made up the dataset. 
+The dataset was then coded into one of the four categories "Career Opportunities", "Social Life", "Learning" and "Other", which was used for the responses that did not fit any of the aforementioned categories.
+This coding formed what we will henceforth refer to as the ground truth.\\
+Based on this dataset, ChatGPT UiO was prompted in different ways. \\
+\begin{itemize}
+    \item (In the beginning), ChatGPT UiO was simply asked to sort the responses into categories using the following prompt: (prompt).
+    \item The prompt was then updated to the following: (prompt)\\
+    \item and (prompt)\\
+\end{itemize}
+Finally ChatGPT UiO was asked to sort the data into the four (predefined) categories using the following prompt: (prompt)\\
+This process was repeated three times. The data was collected, sorted into a list and each category was assigned
+a number for ease of computation.\\[10pt]
 
-Then we gave it the following prompt: (prompt) and repeated this process three times. The data was collected, sorted into a list and each category was assigned
-a number for ease of computation. We then proceeded to calculate the Cohen Kappa Score using the ($cohen_kappa_score$)-function from (scikitlearn.metrics) using the following code:\\
-(code)
+To measure the Inter Rater Reliability, Cohen's Kappa Score was used using the built-in functionality in the python package \textit{scikitlearn.metrics}.\\
+(reference to the code used)\\[10pt]
 
 We then used the centroid method on this dataset using the code provided from the Colab. - have to specify the parameters used
 
-\subsection*{Second "project"}
-For this project we used a pre-categorized dataset from Hugging Face (link), containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
+\subsection{News Headlines Dataset}
+For this project we used a pre-categorized dataset from Hugging Face \url{https://huggingface.co/datasets/okite97/news-data}, containing news headlines which had been labeled with the following categories: "politics", "business", "health", "sports", "tech" and "entertainment".
 The dataset had already been split into a training- and test-dataset, and we used the test-dataset which consisted of 828 headlines and used the first 500. \\
 We then proceeded to manually prompt ChatGPT UiO by asking it to categorize the first 500 headlines by giving it chunks of 50 at a time and starting a new chat per chunk. This prompting 
 was done using the following prompt:\\
@@ -48,6 +52,7 @@ The prompting in the Powershell was done using the following code:\\
 The prompting with the 3"cloud server" was done using the following code:\\
 (code)
 
-\end{flushleft}
+\section{Drexl Dataset}
+- removed row 501 - empty
 
-\subsection*{Third "project"}
+\end{flushleft}
